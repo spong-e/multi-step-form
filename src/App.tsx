@@ -23,7 +23,6 @@ interface StepsComponentProps {
 export const StepsComponent: React.FC<StepsComponentProps> = (props) => {
 	const { prev, next, progress, jump, total, current } = useSteps();
 
-    console.log(current, total, progress)
 	return (
 		<>
 			<Steps onStepChange={props.onStepChange} startsFrom={props.startsFrom}>
@@ -32,18 +31,13 @@ export const StepsComponent: React.FC<StepsComponentProps> = (props) => {
 				<Step3 />
 				<Step4 />
 			</Steps>
-			{progress > 0  && <button data-testid="prev" onClick={prev}>
-				Prev
-			</button>}
-			{progress < 1 && <button data-testid="next" onClick={next}>
-				Next
-			</button>}
+
 			{/* <button data-testid="jump" onClick={() => jump(3)}>
 				Jump to Step 3
 			</button> */}
-			<div data-testid="total">Total: {total}</div>
+			{/* <div data-testid="total">Total: {total}</div>
 			<div data-testid="current">Current: {current}</div>
-			<div data-testid="progress">Progress: {progress * 100}%</div>
+			<div data-testid="progress">Progress: {progress * 100}%</div> */}
 		</>
 	);
 };
